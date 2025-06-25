@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 export default async function Home() {
     return (
         <div>
             <Button>Click</Button>
-            <h1 className="text-red-500">Hey</h1>
+            <Button><Link href="/sign-up">Sign-up</Link></Button>
+            <Button><Link href="/sign-in">Sign-in</Link></Button>
         </div>
     )
 }
