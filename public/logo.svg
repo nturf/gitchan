@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <defs>
+                    <style>
+                        .kitty-body { fill: #2c3e50; }
+                        .kitty-eyes { fill: white; }
+                        .kitty-pupils { fill: black; }
+                        .kitty-ears { fill: #6c7b7f; }
+                        .kitty-nose { fill: #ff6b6b; }
+                        .kitty-whiskers { stroke: black; stroke-width: 2; fill: none; }
+                    </style>
+                </defs>
+                <!-- Main body -->
+                <ellipse cx="100" cy="120" rx="60" ry="50" class="kitty-body"/>
+                <!-- Ears -->
+                <path d="M50 80 L70 40 L90 80 Z" class="kitty-ears"/>
+                <path d="M110 80 L130 40 L150 80 Z" class="kitty-ears"/>
+                <!-- Eyes -->
+                <circle cx="80" cy="100" r="12" class="kitty-eyes"/>
+                <circle cx="120" cy="100" r="12" class="kitty-eyes"/>
+                <circle cx="80" cy="95" r="6" class="kitty-pupils"/>
+                <circle cx="120" cy="95" r="6" class="kitty-pupils"/>
+                <!-- Nose -->
+                <ellipse cx="100" cy="115" rx="4" ry="3" class="kitty-nose"/>
+                <!-- Whiskers -->
+                <path d="M60 110 L40 105" class="kitty-whiskers"/>
+                <path d="M60 120 L40 120" class="kitty-whiskers"/>
+                <path d="M60 130 L40 135" class="kitty-whiskers"/>
+                <path d="M140 110 L160 105" class="kitty-whiskers"/>
+                <path d="M140 120 L160 120" class="kitty-whiskers"/>
+                <path d="M140 130 L160 135" class="kitty-whiskers"/>
+                <!-- Mouth -->
+                <path d="M90 125 Q100 135 110 125" class="kitty-whiskers"/>
+            </svg>
