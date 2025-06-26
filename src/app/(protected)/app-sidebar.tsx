@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React from "react"
+import { useProject } from "@/hooks/use-project"
 
 const items = [
     {
@@ -31,21 +32,10 @@ const items = [
     }
 ]
 
-const projects = [
-    {
-        name: "Project 1"
-    },
-    {
-        name: "Project 2"
-    },
-    {
-        name: "Project 3"
-    }
-]
-
 const AppSidebar = () => {
     const pathname = usePathname()
     const { open } = useSidebar()
+    const { projects, projectId, setProjectId } = useProject()
     return (
         <Sidebar collapsible="icon" variant="floating">
             <SidebarHeader>
@@ -88,15 +78,17 @@ const AppSidebar = () => {
                     </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {projects.map(projects => {
+                            {projects?.map(projects => {
                                 return (
                                     <SidebarMenuItem key={projects.name}>
                                         <SidebarMenuButton asChild>
-                                            <div>
+                                            <div onClick={() => {
+                                                setProjectId(projects.id)
+                                            }}>
                                                 <div className={cn(
                                                     "rounded-sm border size-6 flex items-center justify-center text-sm bg-white text-primary",
                                                     {
-                                                        "bg-primary text-white": true
+                                                        "bg-primary text-white": projects.id === projectId
                                                     }
                                                 )}>
                                                     {projects.name[0]}
@@ -111,7 +103,7 @@ const AppSidebar = () => {
                             <SidebarMenuItem>
                                 <Link href="/create">
                                     {open && (
-                                        <Button size="sm" variant={"outline"} className="w-fit cursor-pointer">
+                                        <Button size="sm" variant={"outline"} className=" cursor-pointerw-fit cursor-pointer">
                                             <Plus />
                                             Create Project
                                         </Button>
