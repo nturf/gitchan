@@ -1,12 +1,13 @@
-"use client";
-import Link from "next/link";
-import React from "react";
-import { useUser } from "@clerk/nextjs";
-import { useProject } from "@/hooks/use-project";
-import { ExternalLink, Github } from "lucide-react";
+"use client"
+import Link from "next/link"
+import React from "react"
+import { useUser } from "@clerk/nextjs"
+import { useProject } from "@/hooks/use-project"
+import { ExternalLink, Github } from "lucide-react"
+import CommitUi from "./commit-log"
 
 const Dashboard = () => {
-    const { project } = useProject();
+    const { project } = useProject()
     return (
         <div>
             {project?.id}
@@ -42,10 +43,12 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="mt-8">commitLog</div>
+                <div className="mt-8">
+                    <CommitUi />
+                </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Dashboard;
+export default Dashboard
